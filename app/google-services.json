@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1064930501306",
+    "firebase_url": "https://the-fox-in-the-forest.firebaseio.com",
+    "project_id": "the-fox-in-the-forest",
+    "storage_bucket": "the-fox-in-the-forest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064930501306:android:30c272914bc36839",
+        "android_client_info": {
+          "package_name": "com.raonstudio.foxforest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064930501306-p62lmrh237piup1n7ae5a1bte0j9a1tm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.raonstudio.foxforest",
+            "certificate_hash": "c611ef0b713619803ed111b6bce4021ea5e10767"
+          }
+        },
+        {
+          "client_id": "1064930501306-upn1i9d1q1dr2h19a3frc7na40fvnui6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4HZMf0ZVyFLCrtlY23EhFRG-eZMcPxGM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064930501306-upn1i9d1q1dr2h19a3frc7na40fvnui6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
