@@ -12,10 +12,9 @@ object SharedPreferenceManager {
         preference = PreferenceManager.getDefaultSharedPreferences(context)
     }
 
-    var userId: String
+    val userId: String
         get() = preference.getString("userId", "")?.takeIf { it.isNotEmpty() }
-            ?: UUID.randomUUID().toString().apply {
-                preference.edit().putString("userId", this).apply()
-            }
-        private set(value) {}
+                ?: UUID.randomUUID().toString().apply {
+                    preference.edit().putString("userId", this).apply()
+                }
 }
