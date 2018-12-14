@@ -8,6 +8,6 @@ fun Context.startActivity(cls: Class<*>) {
     startActivity(Intent(this, cls))
 }
 
-fun Context.toast(resId: Int) {
-    toast(getString(resId))
+fun Context.networkErrorToast() {
+    toast(R.string.network_error_message)
 }

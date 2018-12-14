@@ -22,30 +22,30 @@ object FirebaseAuthManager {
 
     private fun signUp(onSuccess: (user: FirebaseUser) -> Unit) {
         auth.createUserWithEmailAndPassword(email, AUTH_PASSWORD)
-                .addOnSuccessListener {
-                    onSuccess.invoke(it.user)
-                }.addOnFailureListener {
-                    it.printStackTrace()
-                }
+            .addOnSuccessListener {
+                onSuccess.invoke(it.user)
+            }.addOnFailureListener {
+                it.printStackTrace()
+            }
     }
 
     fun signIn(onSuccess: (user: FirebaseUser) -> Unit, onNetworkError: () -> Unit) {
         Log.d("uuid", SharedPreferenceManager.userId)
         auth.signInWithEmailAndPassword(email, AUTH_PASSWORD)
-                .addOnSuccessListener {
-                    onSuccess.invoke(it.user)
-                }.addOnFailureListener {
-                    when (it) {
-                        is FirebaseNetworkException -> {
-                            onNetworkError.invoke()
-                        }
-                        is FirebaseAuthInvalidUserException -> {
-                            signUp(onSuccess)
-                        }
-                        else -> {
-                            it.printStackTrace()
-                        }
+            .addOnSuccessListener {
+                onSuccess.invoke(it.user)
+            }.addOnFailureListener {
+                when (it) {
+                    is FirebaseNetworkException -> {
+                        onNetworkError.invoke()
+                    }
+                    is FirebaseAuthInvalidUserException -> {
+                        signUp(onSuccess)
+                    }
+                    else -> {
+                        it.printStackTrace()
                     }
                 }
+            }
     }
 }

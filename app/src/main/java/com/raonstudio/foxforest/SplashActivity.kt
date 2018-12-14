@@ -2,7 +2,6 @@ package com.raonstudio.foxforest
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import org.jetbrains.anko.toast
 
 class SplashActivity : AppCompatActivity() {
 
@@ -10,11 +9,11 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        FirebaseAuthManager.signIn ({
+        FirebaseAuthManager.signIn({
             startActivity(MainActivity::class.java)
             finish()
         }, {
-            toast(R.string.network_error_message)
+            networkErrorToast()
         })
     }
 }
