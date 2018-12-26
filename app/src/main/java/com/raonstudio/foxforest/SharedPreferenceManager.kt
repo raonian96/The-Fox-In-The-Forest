@@ -14,7 +14,7 @@ object SharedPreferenceManager {
 
     val userId: String
         get() = preference.getString("userId", "")?.takeIf { it.isNotEmpty() }
-                ?: UUID.randomUUID().toString().apply {
-                    preference.edit().putString("userId", this).apply()
-                }
+            ?: UUID.randomUUID().toString().apply {
+                preference.edit().putString("userId", this).apply()
+            }
 }

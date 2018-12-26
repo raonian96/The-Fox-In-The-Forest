@@ -5,16 +5,18 @@ import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
-object FireStoreManager {
+object FireStoreRepository {
     lateinit var db: FirebaseFirestore
 
     fun init() {
         db = FirebaseFirestore.getInstance()
     }
 
+    private val roomListRef get() = db.collection("rooms")
+
     fun createNewRoom(roomName: String, onSuccess: (gameRoom: GameRoom) -> Unit) {
         val newRoom = GameRoom(roomName)
-        db.collection("rooms").document(newRoom.roomId).set(newRoom)
+        roomListRef.document(newRoom.roomId).set(newRoom)
             .addOnSuccessListener {
                 onSuccess.invoke(newRoom)
             }.addOnFailureListener {
@@ -25,7 +27,7 @@ object FireStoreManager {
     }
 
     fun getRoomList(onSuccess: (gameRoom: List<GameRoom?>) -> Unit) {
-        db.collection("rooms").whereEqualTo("state", GameState.WAITING.name)
+        roomListRef.whereEqualTo("state", GameState.WAITING.name)
             .addSnapshotListener(EventListener<QuerySnapshot> { snapShot, e ->
                 if (e != null) {
                     e.printStackTrace()

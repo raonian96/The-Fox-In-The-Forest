@@ -8,7 +8,7 @@ class BaseApplication : Application() {
         super.onCreate()
 
         FirebaseAuthManager.init()
-        FireStoreManager.init()
+        FireStoreRepository.init()
         SharedPreferenceManager.init(this)
     }
 }

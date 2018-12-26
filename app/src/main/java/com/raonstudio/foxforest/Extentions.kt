@@ -11,3 +11,8 @@ fun Context.startActivity(cls: Class<*>) {
 fun Context.networkErrorToast() {
     toast(R.string.network_error_message)
 }
+
+fun String.filterNumber(): String {
+    val numberFilter = Regex("[^0-9]")
+    return numberFilter.replace(this, "")
+}

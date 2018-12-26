@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/newRoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/createRoomButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Room"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <android.support.v7.widget.RecyclerView
+    <fragment
         android:id="@+id/roomList"
+        android:name="com.raonstudio.foxforest.RoomListFragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/createRoomButton" />
+        android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>
